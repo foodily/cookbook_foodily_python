@@ -14,10 +14,15 @@ python_pip "redis" do
  	version node[:foodily_python]['redis']['version']
 end 
 
+python_pip "inflect" do
+        version node[:foodily_python]['inflect']['version']
+end
+
+#dependency for MySql-python
 package "libmysqlclient-dev" do
   action :install
 end
 
 python_pip "MySQL-python" do
-        version node[:foodily_python]['mysql']['version']
+   version node[:foodily_python]['mysql']['version']  
 end
